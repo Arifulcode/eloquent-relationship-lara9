@@ -16,21 +16,16 @@
                     <hr>
                     <thead>
                         <tr>
-                            <th>Title</th>
                             <th>Comments</th>
+                            <th>Post Title</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $data )
+                        @foreach ($comments as $data )
                         <tr>
 
-                            <td>{{ $data->title }}</td>
-                            {{-- <td>{{ $data->comment->message }}</td> --}}
-                            <td>
-                                @foreach ($data->comment as $d )
-                                    {{ $d->message }}
-                                @endforeach
-                            </td>
+                            <td>{{ $data->message }}</td>
+                            <td>{{ $data->Post->title }}</td>
 
                         </tr>
 

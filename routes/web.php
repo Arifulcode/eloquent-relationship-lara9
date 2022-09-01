@@ -43,12 +43,12 @@ Route::get('/', function () {
 });
 Route::get('/relation', function () {
 
-    // $comments = DB::table('Post')->get();
-    // $comments = Post::find(3)->comment;
+
+    $comments = Post::find(3)->comment;
     // return $comments;
 
-    // $posts = Comment::find(3);
-    // $posts = Comment::find(3)->post;
+    $posts = Comment::find(3);
+    $posts = Comment::find(3)->post;
     // return $posts;
 
 
@@ -63,5 +63,5 @@ Route::get('/relation', function () {
     // dd($posts);
     // return $posts;
 
-    return view('commentpost', compact('posts'));
+    return view('commentpost', compact('comments'));
 });

@@ -21,10 +21,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $user )
                         <tr>
-                            <td></td>
-                            <td></td>
+
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->phone->name }}</td>
+
                         </tr>
+
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>

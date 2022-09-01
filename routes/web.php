@@ -27,6 +27,8 @@ Route::get('/', function () {
 
     $users = User::all();
     // return $users;
+    $phones = Phone::all();
+    // return $phones;
 
-    return view('welcome', compact('users'));
+    return view('welcome', compact('phones'));
 });

@@ -21,11 +21,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user )
+                        @foreach ($phones as $data )
                         <tr>
 
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->phone->name }}</td>
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->user->name }}</td>
 
                         </tr>
 

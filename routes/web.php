@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Phone;
 use App\Models\User;
+use App\Models\Post;
+use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +33,35 @@ Route::get('/', function () {
     $phones = Phone::all();
     // return $phones;
 
-    return view('welcome', compact('phones'));
+    $comments = Post::find(3)->comment;
+    return $comments;
+    // dd($comments);
+    // $posts = Post::all();
+    // return $posts;
+
+    // return view('welcome', compact('phones'));
+});
+Route::get('/relation', function () {
+
+    // $comments = DB::table('Post')->get();
+    // $comments = Post::find(3)->comment;
+    // return $comments;
+
+    // $posts = Comment::find(3);
+    // $posts = Comment::find(3)->post;
+    // return $posts;
+
+
+    $posts=Post::all();
+    // return $posts;
+    $comments=Comment::all();
+    // return $comments;
+
+    $posts=Post::with('Comment')->get();
+    // return $posts;
+
+    // dd($posts);
+    // return $posts;
+
+    return view('commentpost', compact('posts'));
 });

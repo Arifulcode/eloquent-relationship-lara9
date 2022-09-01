@@ -44,5 +44,8 @@ class User extends Authenticatable
 
     public function Phone(){
         return $this->hasOne(Phone::class);
+        // if you are not same using model name/if you want to change different name use
+        //comment code structure two model and change db table column name
+        //return $this->hasOne(Phone::class,'user_id/change_column_name');
     }
 }
